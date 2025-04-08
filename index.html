@@ -11,7 +11,7 @@
             padding: 0;
         }
         .header {
-            background-color: #273d52;
+            background-color: #0fb2f3;
             color: white;
             font-family: 'Garamond',serif;
             padding: 20px 0;
@@ -57,6 +57,24 @@
             padding:20px;
             font-size:14px;
         }
+        .zoom-container {
+            overflow: hidden; 
+            display: inline-block;
+            border-radius: 10px; 
+            width: 500px;
+            height: 500px;
+        }
+
+        .zoom-image {
+            transition: transform 0.3s ease; 
+            width: 700px; 
+            height: auto;
+        }
+
+        .zoom-image:hover {
+            transform: scale(1.1); 
+        }
+
     </style>
 </head>
 <body>
@@ -70,6 +88,7 @@
         <a href="grade3to5.html">3rd Grade to 5th Grade</a>
         <a href="Secondary and Higher secondary.html">Secondary and Higher secondary</a>
         <a href="alumniconnect.html">Alumni Connect</a>
+        <a href="Registration.html">Registration</a>
     </div>
 
     <div class="content">
@@ -80,9 +99,14 @@
         <p>I was born on the 11th of August 2006,in Chennai. Ever since I was a kid I have been legit, XO tatted on my body. Loved Sports and outdoor activities a lot, mainly cricket. Soon it became my ambition to play cricket full time and represent my country sooner or later.</p>
         <p>This was tough on me as I had to work hard to develop skill which is not god gifted to me sadly, but it is a proccess that to this day I follow.</p>
         <P>In 2014 I acted in a movie called PASANGA 2. It was an amazing experince and it was a lot of fun and a new experince. Acting alongside Surya and Amala Paul was fun to say atleast.</P>
-        <img src="C:\Users\student\Downloads\maxresdefault.jpg" width="500",height="500"></img>
-        <a href="https://www.youtube.com/watch?v=s9GcKyzDol0" style="color: rgb(8, 12, 77);">This is the link to my very own scene in the movie.</a>
+       
     </div>
-    </div>
+    <div class="zoom-container">
+        <img src="C:\Users\student\Downloads\maxresdefault.jpg" alt="Zoom Image" class="zoom-image">
+        
+      </div>
+    </div>  
+
 </body>
 </html>
+    
