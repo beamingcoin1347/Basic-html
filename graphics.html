@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Canvas Graphics</title>
+    <style>
+        canvas {
+            border: 2px solid black;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Smiley Face</h2>
+    <canvas id="smileyCanvas" width="200" height="200"></canvas>
+
+    <h2>8x8 Chessboard</h2>
+    <canvas id="chessCanvas" width="320" height="320"></canvas>
+
+    <h2>Rainbow Arcs</h2>
+    <canvas id="rainbowCanvas" width="500" height="300"></canvas>
+
+    <script>
+        
+        const smiley = document.getElementById('smileyCanvas').getContext('2d');
+
+        
+        smiley.beginPath();
+        smiley.arc(100, 100, 80, 0, Math.PI * 2, true); 
+        smiley.fillStyle = "#FFD700";
+        smiley.fill();
+        smiley.stroke();
+
+        
+        smiley.beginPath();
+        smiley.arc(65, 80, 10, 0, Math.PI * 2, true);  
+        smiley.arc(135, 80, 10, 0, Math.PI * 2, true); 
+        smiley.fillStyle = "black";
+        smiley.fill();
+
+        
+        smiley.beginPath();
+        smiley.arc(100, 100, 50, 0, Math.PI, false);  
+        smiley.stroke();
+
+        
+        const chess = document.getElementById('chessCanvas').getContext('2d');
+        const size = 40; 
+
+        for (let row = 0; row < 8; row++) {
+            for (let col = 0; col < 8; col++) {
+                if ((row + col) % 2 === 0) {
+                    chess.fillStyle = 'white';
+                } else {
+                    chess.fillStyle = 'black';
+                }
+                chess.fillRect(col * size, row * size, size, size);
+            }
+        }
+
+        const rainbow = document.getElementById('rainbowCanvas').getContext('2d');
+        const colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet"];
+        let radius = 140;
+
+        colors.forEach((color, index) => {
+            rainbow.beginPath();
+            rainbow.arc(250, 250, radius - index * 15, Math.PI, 2 * Math.PI);
+            rainbow.strokeStyle = color;
+            rainbow.lineWidth = 15;
+            rainbow.stroke();
+        });
+    </script>
+
+</body>
+</html>
